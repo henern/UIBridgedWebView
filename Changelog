@@ -1,0 +1,8 @@
+next
++ more js-bridges?
+
+v1.0.0
++ UIBridgedWebView.framework: enable messages between ObjC and Javascript.
++ JSBridgeDevice: js can read batteryStatus.
++ JSBridgeScreen: js can rotate the status bar.
++ JSBridgeSample: just a sample.
