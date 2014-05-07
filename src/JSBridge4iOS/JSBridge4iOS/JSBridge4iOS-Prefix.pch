@@ -6,7 +6,7 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
-
-    #define KEY_ACTION      (@"action")
+    #import <UIBridgedWebView/Bridge4iOS.h>
+    #define KEY_ACTION      KEY_JS2OBJC_ACTION
 
 #endif

@@ -11,6 +11,9 @@
 #import "Bridge4iOSCommon.h"
 #import "UIBridgedWebView.h"
 
+// each method call, from javascript to ObjC, should take a parameter with this key
+extern NSString * const KEY_JS2OBJC_ACTION;
+
 /***********************************************************************************************
 // NOTE: make sure the implementation of subclass is THREAD-SAFE!!
 //       this is non-ARC.
