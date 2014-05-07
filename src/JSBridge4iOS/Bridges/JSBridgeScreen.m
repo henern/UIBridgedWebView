@@ -23,9 +23,8 @@
     return self;
 }
 
-#pragma mark expoted methods
+#pragma mark exported methods
 
-// js: window.iOSScreen.exec('{"action":"barOrientation"}');
 #define JS_METHOD_BarOrientation        @"barOrientation"
 - (NSString*)_statusBarOrientation:(NSDictionary*)params
 {

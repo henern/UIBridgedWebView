@@ -1,20 +1,25 @@
 //
-//  JSBridgeDevice.m
+//  JSBridgeSample.m
 //  JSBridge4iOS
 //
 //  Created by Wayne W on 14-5-7.
 //
 //
 
-#import "JSBridgeDevice.h"
+#import "JSBridgeSample.h"
 #import <UIKit/UIDevice.h>
 
-@implementation JSBridgeDevice
+#define JS_METHOD_BATTERYSTATE  @"batteryState"
+
+// implement the subclass
+@implementation JSBridgeSample
 
 #pragma mark Bridge4iOS
 - (id)init
 {
-    self = [super initWithName:@"iOSDevice"];
+    // assign a name for this object, which will be used in the Javascript code.
+    // @js: window.iOSSample
+    self = [super initWithName:@"iOSSample"];
     if (self)
     {
         
@@ -30,15 +35,22 @@
     // do nothing
 }
 
-#pragma mark expoted methods
+#pragma mark exported methods
 
-#define JS_METHOD_BATTERYSTATE  @"batteryState"
+// declare the exported methods
+BEGIN_EXPORTED_METHODS(16)
+ADD_EXPORTED_METHOD(JS_METHOD_BATTERYSTATE,     @selector(_batteryState:))
+END_EXPORTED_METHODS()
+
+// implement the methods
+// @js: window.iOSSample.exec('{"action":"batteryState","return_type":"string"}');
+// @return: string
 - (id)_batteryState:(NSDictionary *)params
 {
-    NSString *strAction = [params objectForKey:KEY_ACTION];         
+    NSString *strAction = [params objectForKey:KEY_ACTION];         // check if the action matches the method name
     assert([strAction isEqualToString:JS_METHOD_BATTERYSTATE]);
     
-    NSString *return_type = [params objectForKey:@"return_type"];   
+    NSString *return_type = [params objectForKey:@"return_type"];   // read the parameters
     id result = nil;
     
     UIDeviceBatteryState state = [UIDevice currentDevice].batteryState;
@@ -51,13 +63,9 @@
         result = [NSNumber numberWithInt:state];
     }
     
+    // return a value to JS.
     return result;
 }
-
-#pragma mark method table
-BEGIN_EXPORTED_METHODS(16)
-ADD_EXPORTED_METHOD(JS_METHOD_BATTERYSTATE,     @selector(_batteryState:))
-END_EXPORTED_METHODS()
 
 #pragma mark helper
 - (NSString*)batteryState2string:(UIDeviceBatteryState)state
