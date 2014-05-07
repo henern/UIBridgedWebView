@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface JSBridge4iOS : NSObject
-
-@end
+#import <UIBridgedWebView/UIBridgedWebView.h>
+#import <SBJSON/SBJSON.h>
+#import "JSBridgeDevice.h"

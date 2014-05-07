@@ -1,0 +1,17 @@
+<html>
+
+<body>
+    Hello World!
+</body>
+
+<script>
+    
+    var readBatteryState = function() {
+        var batteryState = window.iOSDevice.exec('{"action":"batteryState","return_type":"string"}');
+        alert("BATTERY: "+batteryState);
+    }
+
+    setTimeout(function(){readBatteryState();}, 1000);
+</script>
+
+</html>
