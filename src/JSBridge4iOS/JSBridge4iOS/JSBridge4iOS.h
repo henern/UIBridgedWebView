@@ -10,3 +10,4 @@
 #import <UIBridgedWebView/UIBridgedWebView.h>
 #import <SBJSON/SBJSON.h>
 #import "JSBridgeDevice.h"
+#import "JSBridgeScreen.h"

@@ -1,17 +1,45 @@
 <html>
 
-<body>
-    Hello World!
-</body>
-
 <script>
     
     var readBatteryState = function() {
         var batteryState = window.iOSDevice.exec('{"action":"batteryState","return_type":"string"}');
-        alert("BATTERY: "+batteryState);
+        var box = document.getElementById("lblBatteryStatus");
+        box.innerHTML = "BATTERY STATUS: "+batteryState;
     }
 
-    setTimeout(function(){readBatteryState();}, 1000);
+    var readOrientation = function()
+    {
+        var str = window.iOSScreen.exec('{"action":"barOrientation"}');
+        var box = document.getElementById("lblScreenOrientation");
+        box.innerHTML = (str);
+    }
+
+    var rotate2 = function(toOrientation)
+    {
+        window.iOSScreen.exec('{"action":"rotateTo","to":"'+toOrientation+'","animated":1}');
+        setTimeout(function(){readOrientation();}, 1000);
+    }
 </script>
+
+<body>
+    <p>Hello World!</p>
+    
+    </br>
+    <label id="lblBatteryStatus">BATTERY STATUS: LOADING</label>
+    
+    <p>
+    <label id="lblScreenOrientation"></label></br>
+    <input type="button" value="Rotate To Portrait" style="width:300px; height:50px;" onclick='rotate2("Portrait");'/></br>
+    <input type="button" value="Rotate To LandscapeLeft" style="width:300px; height:50px;" onclick='rotate2("LandscapeLeft");'/></br>
+    <input type="button" value="Rotate To LandscapeRight" style="width:300px; height:50px;" onclick='rotate2("LandscapeRight");'/></br>
+    <input type="button" value="Rotate To UpsideDown" style="width:300px; height:50px;" onclick='rotate2("UpsideDown");'/></br>
+    </p>
+    
+    <script>
+        readOrientation();
+        setTimeout(function(){readBatteryState();}, 1000);
+    </script>
+</body>
 
 </html>

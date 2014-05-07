@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23301F3F191A78A1003C24B0 /* JSBridgeScreen.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 238607FF191A726D00F24B70 /* JSBridgeScreen.h */; };
 		23860727191A4AEB00F24B70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23860726191A4AEB00F24B70 /* Foundation.framework */; };
 		2386072C191A4AEB00F24B70 /* JSBridge4iOS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2386072B191A4AEB00F24B70 /* JSBridge4iOS.h */; };
 		238607F3191A556400F24B70 /* JSBridgeDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 238607F2191A556400F24B70 /* JSBridgeDevice.m */; };
 		238607F4191A556A00F24B70 /* JSBridgeDevice.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 238607F1191A556400F24B70 /* JSBridgeDevice.h */; };
+		23860801191A726D00F24B70 /* JSBridgeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 23860800191A726D00F24B70 /* JSBridgeScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,6 +22,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				23301F3F191A78A1003C24B0 /* JSBridgeScreen.h in CopyFiles */,
 				238607F4191A556A00F24B70 /* JSBridgeDevice.h in CopyFiles */,
 				2386072C191A4AEB00F24B70 /* JSBridge4iOS.h in CopyFiles */,
 			);
@@ -36,6 +39,8 @@
 		2386074D191A4CBD00F24B70 /* UIBridgedWebView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIBridgedWebView.framework; path = ../../Frameworks/UIBridgedWebView.framework; sourceTree = "<group>"; };
 		238607F1191A556400F24B70 /* JSBridgeDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridgeDevice.h; sourceTree = "<group>"; };
 		238607F2191A556400F24B70 /* JSBridgeDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeDevice.m; sourceTree = "<group>"; };
+		238607FF191A726D00F24B70 /* JSBridgeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridgeScreen.h; sourceTree = "<group>"; };
+		23860800191A726D00F24B70 /* JSBridgeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeScreen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,8 @@
 			children = (
 				238607F1191A556400F24B70 /* JSBridgeDevice.h */,
 				238607F2191A556400F24B70 /* JSBridgeDevice.m */,
+				238607FF191A726D00F24B70 /* JSBridgeScreen.h */,
+				23860800191A726D00F24B70 /* JSBridgeScreen.m */,
 			);
 			path = Bridges;
 			sourceTree = SOURCE_ROOT;
@@ -156,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				238607F3191A556400F24B70 /* JSBridgeDevice.m in Sources */,
+				23860801191A726D00F24B70 /* JSBridgeScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
