@@ -41,6 +41,8 @@
 		238607F2191A556400F24B70 /* JSBridgeDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeDevice.m; sourceTree = "<group>"; };
 		238607FF191A726D00F24B70 /* JSBridgeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridgeScreen.h; sourceTree = "<group>"; };
 		23860800191A726D00F24B70 /* JSBridgeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeScreen.m; sourceTree = "<group>"; };
+		2386A3FC191AA28100B2F2CA /* JSBridgeSample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridgeSample.h; sourceTree = "<group>"; };
+		2386A3FD191AA28100B2F2CA /* JSBridgeSample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridgeSample.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		238607F0191A555A00F24B70 /* Bridges */ = {
 			isa = PBXGroup;
 			children = (
+				2386A3FB191AA27700B2F2CA /* Sample */,
 				238607F1191A556400F24B70 /* JSBridgeDevice.h */,
 				238607F2191A556400F24B70 /* JSBridgeDevice.m */,
 				238607FF191A726D00F24B70 /* JSBridgeScreen.h */,
@@ -110,6 +113,15 @@
 			);
 			path = Bridges;
 			sourceTree = SOURCE_ROOT;
+		};
+		2386A3FB191AA27700B2F2CA /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				2386A3FC191AA28100B2F2CA /* JSBridgeSample.h */,
+				2386A3FD191AA28100B2F2CA /* JSBridgeSample.m */,
+			);
+			name = Sample;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

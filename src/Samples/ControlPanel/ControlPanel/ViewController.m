@@ -42,6 +42,7 @@
     
     UIBridgedWebView *webView = [[UIBridgedWebView alloc] initWithFrame:self.view.bounds];
     webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    // set up UIBridgedWebView before loading any html
     [self _setupWebView:webView];
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"webpage" ofType:@"html"];
@@ -75,6 +76,7 @@
 #pragma mark private
 - (void)_setupWebView:(UIBridgedWebView*)wv
 {
+    // export the bridge object to javascript hosted by UIBridgedWebView
     JSBridgeDevice *brdgDevice = [[JSBridgeDevice alloc] init];
     BOOL ret = [brdgDevice injectTo:wv];
     
@@ -112,7 +114,16 @@
     
     self.view.bounds = rect;
     
-    [UIView animateWithDuration:0.2f animations:^{
+    CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
+    UIInterfaceOrientation oldFrom = [UIApplication sharedApplication].statusBarOrientation;
+    int mask = (1 << oldFrom) | (1 << newTo);
+    if (mask == UIInterfaceOrientationMaskLandscape ||
+        mask == (UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown))
+    {
+        duration *= 2;
+    }
+    
+    [UIView animateWithDuration:duration animations:^{
         self.view.transform = transform;
     }];
 }
