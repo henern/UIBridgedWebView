@@ -1,18 +1,24 @@
 UIBridgedWebView
 ================
 
-sending messages between Obj-C and JavaScript in UIWebView
+sending messages between Objective-C and JavaScript in UIWebView (iOS only)
 
+Features
+--------
+1. Javascript can send message to Obj-C, and get the return value synchronously.
+2. Obj-C can send message to Javascript as well.
+3. more common bridges for Javascript.
+4. ... (any idea? :))
 
 Samples
 -------
-please check src/Samples/ControlPanel.
+please check [src/Samples/ControlPanel](https://github.com/henern/UIBridgedWebView/tree/master/src/Samples/ControlPanel).
 
 
 API Reference
 -------------
-### ObjC side
-##### How to export an ObjC object to Javascript?
+### Obj-C side
+##### How to export an Obj-C object to Javascript?
 
 1. import the header file 
 
@@ -33,7 +39,7 @@ API Reference
          */
         - (id)_batteryState:(NSDictionary*)params;
 
-4. move the implementation
+4. move to the implementation
 
         @implementation JSBridgeSample
 
@@ -78,7 +84,7 @@ API Reference
 
 
 ### Javascript side
-##### How to send message to ObjC, and get the return value synchronously?
+##### How to send message to Obj-C, and get the return value synchronously?
 
         var batteryState = window.iOSSample.exec('{"action":"batteryState","return_type":"string"}');
         var box = document.getElementById("lblBatteryStatus");
