@@ -1,7 +1,7 @@
 UIBridgedWebView
 ================
 
-sending messages between Objective-C and JavaScript in UIWebView (iOS only)
+sending messages between Objective-C and JavaScript in UIWebView, async- or synchronously (iOS only)
 
 Features
 --------
